@@ -5,6 +5,7 @@ from queue import PriorityQueue
 import time
 
 
+
 class Element:
     def __init__(self, id, value):
         self.id = id
