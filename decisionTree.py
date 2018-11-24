@@ -24,7 +24,6 @@ data = MLUtils.loadLibSVMFile(sc, '/liyuanshuo/decisionTreeData.data')
 #  impurity:信息纯度度量，进行分类时可选择熵或基尼，这里设置为基尼；
 #  maxDepth:决策树最大深度，这里设为15；
 #  maxBins:特征分裂时的最大划分数量,这里设为32。
-
 model = DecisionTree.trainClassifier(trainingData, numClasses=8, categoricalFeaturesInfo={},
                                      impurity='gini', maxDepth=15, maxBins=32)
 

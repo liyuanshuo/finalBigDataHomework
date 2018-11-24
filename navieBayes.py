@@ -17,8 +17,8 @@ data = sc.textFile('/liyuanshuo/data.data').map(parseLine)
 # 将数据按照60%和40%的比例分为训练集和测试集
 training, test = data.randomSplit([0.6, 0.4], seed=0)
 
-# 训练朴素贝叶斯模型
-model = NaiveBayes.train(training, 1.0)
+# 获得训练模型,第一个参数为数据，第二个参数为平滑参数lamda，默认为1，可改
+model = NaiveBayes.train(training, lambda: 1.0)
 
 # 预测准确率
 predictionAndLabel = test.map(lambda p: (model.predict(p.features), p.label))
